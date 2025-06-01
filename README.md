@@ -2,10 +2,6 @@
 
 This project demonstrates how to automate the deployment of Google Cloud Platform (GCP) networks using Terraform. It creates three different network configurations with firewall rules and VM instances.
 
-## Video
-
-
-
 ## Overview
 
 The project creates:
