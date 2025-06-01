@@ -1,0 +1,55 @@
+output "managementnet_network_id" {
+  description = "The ID of the managementnet VPC network"
+  value       = google_compute_network.managementnet.id
+}
+
+output "privatenet_network_id" {
+  description = "The ID of the privatenet VPC network"
+  value       = google_compute_network.privatenet.id
+}
+
+output "mynetwork_network_id" {
+  description = "The ID of the mynetwork VPC network"
+  value       = google_compute_network.mynetwork.id
+}
+
+output "managementnet_subnet_id" {
+  description = "The ID of the managementnet subnet"
+  value       = google_compute_subnetwork.managementsubnet-us.id
+}
+
+output "privatenet_subnet_us_id" {
+  description = "The ID of the privatenet US subnet"
+  value       = google_compute_subnetwork.privatesubnet-us.id
+}
+
+output "privatenet_subnet_second_id" {
+  description = "The ID of the privatenet second subnet"
+  value       = google_compute_subnetwork.privatesubnet-second-subnet.id
+}
+
+output "vm_instances" {
+  description = "Information about created VM instances"
+  value = {
+    managementnet_vm = {
+      name         = module.managementnet-us-vm.instance_name
+      internal_ip  = module.managementnet-us-vm.internal_ip
+      external_ip  = module.managementnet-us-vm.external_ip
+    }
+    privatenet_vm = {
+      name         = module.privatenet-us-vm.instance_name
+      internal_ip  = module.privatenet-us-vm.internal_ip
+      external_ip  = module.privatenet-us-vm.external_ip
+    }
+    mynet_us_vm = {
+      name         = module.mynet-us-vm.instance_name
+      internal_ip  = module.mynet-us-vm.internal_ip
+      external_ip  = module.mynet-us-vm.external_ip
+    }
+    mynet_second_vm = {
+      name         = module.mynet-second-vm.instance_name
+      internal_ip  = module.mynet-second-vm.internal_ip
+      external_ip  = module.mynet-second-vm.external_ip
+    }
+  }
+}

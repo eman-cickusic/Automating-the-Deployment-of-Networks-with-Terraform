@@ -1,0 +1,28 @@
+variable "project_id" {
+  description = "The GCP project ID"
+  type        = string
+}
+
+variable "region" {
+  description = "The primary GCP region"
+  type        = string
+  default     = "us-central1"
+}
+
+variable "zone" {
+  description = "The primary GCP zone"
+  type        = string
+  default     = "us-central1-a"
+}
+
+variable "region_2" {
+  description = "The secondary GCP region"
+  type        = string
+  default     = "us-west1"
+}
+
+variable "zone_2" {
+  description = "The secondary GCP zone"
+  type        = string
+  default     = "us-west1-a"
+}

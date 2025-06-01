@@ -1,0 +1,12 @@
+# Copy this file to terraform.tfvars and update with your values
+
+# Your GCP Project ID
+project_id = "your-project-id-here"
+
+# Primary region and zone
+region = "us-central1"
+zone   = "us-central1-a"
+
+# Secondary region and zone
+region_2 = "us-west1"
+zone_2   = "us-west1-a"

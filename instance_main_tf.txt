@@ -1,0 +1,42 @@
+variable "instance_name" {
+  description = "Name for the VM instance"
+  type        = string
+}
+
+variable "instance_zone" {
+  description = "Zone for the VM instance"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "Machine type for the VM instance"
+  type        = string
+  default     = "e2-standard-2"
+}
+
+variable "instance_subnetwork" {
+  description = "Subnetwork for the VM instance"
+  type        = string
+}
+
+resource "google_compute_instance" "vm_instance" {
+  name         = var.instance_name
+  zone         = var.instance_zone
+  machine_type = var.instance_type
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+
+  network_interface {
+    subnetwork = var.instance_subnetwork
+
+    access_config {
+      # Allocate a one-to-one NAT IP to the instance
+    }
+  }
+
+  tags = ["http-server", "ssh-server"]
+}
