@@ -9,7 +9,7 @@ The project creates:
 - **privatenet**: A custom-mode network with two subnets and one VM instance  
 - **mynetwork**: An auto-mode network with two VM instances
 
-## Architecture
+## Architecture 
 
 ```
 ├── managementnet (Custom Mode)
